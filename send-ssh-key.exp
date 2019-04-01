@@ -1,0 +1,11 @@
+#function to run ssh-copy-id without interact
+set ip    [lindex $argv 0]
+set user  [lindex $argv 1]
+set pass  [lindex $argv 2]
+
+spawn ssh-copy-id $user@$ip
+expect {
+	"password:" {send "$pass\r"}
+
+}
+interact

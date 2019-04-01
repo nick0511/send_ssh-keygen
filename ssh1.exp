@@ -1,0 +1,12 @@
+#make the ssh-keygen
+spawn ssh-keygen -t rsa
+
+expect {
+	"*(/root/.ssh/id_rsa)" {send "\r";exp_continue}
+	"*Overwrite*" {send  "y\r";exp_continue}
+	"(empty for no passphrase)" {send  "\r";exp_continue}
+	"*same passphrase again" {send  "\r"}
+}
+	interact
+
+
