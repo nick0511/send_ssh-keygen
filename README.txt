@@ -14,3 +14,7 @@ userlist 存放服务器ip，用户，密码的文本。
  ip username  password
 
 ssh_cp_log 最后生成的结果，记录每一次是否分发成功。
+
+                                                   
+脚本运行的程序：1、send.sh ---->2、ssh1.sh(sshkeygen) -----> 3、send-ssh-key.exp(自动化分发) -----> 4、结果写入userlist
+----列表内是否分发结束？是：结束/否：回到3----->结束脚本
